@@ -4,6 +4,15 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Serve static assets directly if running via PHP built-in CLI web server
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+if (php_sapi_name() === 'cli-server') {
+    $filePath = __DIR__ . $uri;
+    if ($uri !== '/' && file_exists($filePath) && !is_dir($filePath)) {
+        return false; // Serve static asset directly
+    }
+}
+
 // Simple Autoloader for App namespace
 spl_autoload_register(function ($class) {
     $prefix = 'App\\';
@@ -19,8 +28,6 @@ spl_autoload_register(function ($class) {
     }
 });
 
-// Serve static assets if index.php is invoked directly
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];
 
 // Simple Express-style Router
