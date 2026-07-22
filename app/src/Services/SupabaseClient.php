@@ -224,7 +224,7 @@ class SupabaseClient
             if (!empty($filters)) {
                 $items = array_filter($items, function($row) use ($filters) {
                     foreach ($filters as $key => $val) {
-                        if (str_str($val, 'eq.')) {
+                        if (str_contains($val, 'eq.')) {
                             $target = str_replace('eq.', '', $val);
                             if (($row[$key] ?? null) != $target) return false;
                         }
