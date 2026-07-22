@@ -1,0 +1,24 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Temporary and Lock Files
+.~lock.*
+*.log
+*.tmp
+*.swp
+
+# Storage & Uploads
+app/storage/*
+!app/storage/.gitkeep
+app/public/uploads/*
+!app/public/uploads/.gitkeep
+
+# Dependencies
+vendor/
+node_modules/
+
+# OS Files
+.DS_Store
+Thumbs.db

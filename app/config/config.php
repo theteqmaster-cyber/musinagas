@@ -5,15 +5,15 @@ return [
     'app_name' => getenv('APP_NAME') ?: 'Musina Gas',
     'app_url' => getenv('APP_URL') ?: 'http://localhost:8085',
     'app_env' => getenv('APP_ENV') ?: 'development',
-    'app_secret' => getenv('APP_SECRET') ?: 'musinagas-secret-key-32-chars-minimum!!',
+    'app_secret' => getenv('APP_SECRET') ?: '',
 
     'firebase' => [
-        'api_key' => getenv('FIREBASE_API_KEY') ?: 'AIzaSyD0uQBAt15z4uwYqz9dNhjtDndkb9rvn3s',
-        'auth_domain' => getenv('FIREBASE_AUTH_DOMAIN') ?: 'musinagas-42910.firebaseapp.com',
-        'project_id' => getenv('FIREBASE_PROJECT_ID') ?: 'musinagas-42910',
-        'storage_bucket' => getenv('FIREBASE_STORAGE_BUCKET') ?: 'musinagas-42910.firebasestorage.app',
-        'messaging_sender_id' => getenv('FIREBASE_MESSAGING_SENDER_ID') ?: '494442545277',
-        'app_id' => getenv('FIREBASE_APP_ID') ?: '1:494442545277:web:7b0afeb76a57c6ab547114',
+        'api_key' => getenv('FIREBASE_API_KEY') ?: '',
+        'auth_domain' => getenv('FIREBASE_AUTH_DOMAIN') ?: '',
+        'project_id' => getenv('FIREBASE_PROJECT_ID') ?: '',
+        'storage_bucket' => getenv('FIREBASE_STORAGE_BUCKET') ?: '',
+        'messaging_sender_id' => getenv('FIREBASE_MESSAGING_SENDER_ID') ?: '',
+        'app_id' => getenv('FIREBASE_APP_ID') ?: '',
     ],
 
     'database_url' => getenv('DATABASE_URL') ?: '',
